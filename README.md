@@ -1,5 +1,5 @@
-# Alwa
+# Walas
 
 ## Overview
 
-Alwa es un framework frontend basado en webcomponents v1
+Walas es un framework frontend basado en webcomponents v1
