@@ -2,4 +2,4 @@
 
 ## Overview
 
-Alwa es un framework frontend basado en webcomponents
+Alwa es un framework frontend basado en webcomponents v1
