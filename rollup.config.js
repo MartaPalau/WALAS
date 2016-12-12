@@ -14,7 +14,8 @@ export default {
       main: true,
       browser: true,
     }),
-    commonjs()
+    commonjs(),
+    uglify()
   ],
   
   sourceMap: true,
