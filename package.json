@@ -1,6 +1,6 @@
 {
-  "name": "alwa",
-  "version": "1.0.0",
+  "name": "walas",
+  "version": "0.0.0",
   "description": "framework frontend for webcomponents",
   "main": "index.js",
   "scripts": {
