@@ -1,0 +1,23 @@
+{
+  "name": "alwa",
+  "version": "1.0.0",
+  "description": "framework frontend for webcomponents",
+  "main": "index.js",
+  "scripts": {
+    "budle": "rollup index.js --output dist/bundle.js --format cjs",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run budle"
+  },
+  "keywords": [
+    "webcomponents"
+  ],
+  "author": "Alfatec",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "rollup": "^0.36.4"
+  },
+  "dependencies": {
+    "incremental-dom": "^0.5.1"
+  }
+}
