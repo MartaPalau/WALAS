@@ -4,7 +4,7 @@
   "description": "framework frontend for webcomponents",
   "main": "index.js",
   "scripts": {
-    "budle": "rollup index.js --output dist/bundle.js --format cjs",
+    "budle": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run budle"
   },
@@ -15,7 +15,11 @@
   "license": "ISC",
   "devDependencies": {
     "babel": "^6.5.2",
-    "rollup": "^0.36.4"
+    "rollup": "^0.36.4",
+    "rollup-plugin-commonjs": "^5.0.5",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-plugin-uglify": "^1.0.1"
   },
   "dependencies": {
     "incremental-dom": "^0.5.1"
