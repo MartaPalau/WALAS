@@ -1,1 +1,1 @@
-export * from './src/core/index'
+export * from './modules/core/index'
