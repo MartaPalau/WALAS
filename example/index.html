@@ -6,19 +6,29 @@
 </head>
 <body>    
     <div id="app">Loading....</div>
-    <!--
-    <x-app dependency="Hello"></x-app>
-    -->
+    
+    <x-app></x-app>
+    
     <script src="../dist/bundle.js"></script>
     <script>
         class App extends Walas.ComponentBase{
             static componentName(){
                 return "x-app";                
             }
+            static inject(){
+                return ["$http"];
+            }
             constructor(){
                 super();
                 this._text = "Hello World";
-            }
+                var self= this;
+                this.constructor.inject().forEach((item)=>{
+                    self[item] = new class{};
+                });
+            } 
+            click(){
+               this.text="Pedro";
+            }           
             set text(value){
                 this._text = value;
                 this.refresh();
@@ -27,14 +37,21 @@
                 return this._text
             }
             render(){
-                Walas.Dom.open('div');
+                /*
+                @componet("x-app")
+                <div onClick="{this.click}">
+                    {this.text}
+                </div>
+                */
+
+                Walas.Dom.open('div',null,null,"onClick",this.click.bind(this));
                     Walas.Dom.text(this.text);
                 Walas.Dom.close('div');
             }
             
         }
         var app = Walas.Components.register(App);
-        Walas.bootstrap(document.getElementById('app'),app);
+        //Walas.bootstrap(document.getElementById('app'),app);
        
     </script>
 </body>

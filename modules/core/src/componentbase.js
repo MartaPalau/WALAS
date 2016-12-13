@@ -1,9 +1,10 @@
-import {Dom} from './dom'
+import {Dom} from './dom';
+
 export class ComponentBase extends HTMLElement{
     constructor(){
         super();
         this._patch= this.attachShadow({mode: 'closed'});       
-    }
+    }   
     get patch(){
         return this._patch;
     }
