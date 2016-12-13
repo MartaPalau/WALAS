@@ -1,5 +1,5 @@
 import {patch} from 'incremental-dom'
-export const bootStrap =function(element,component){
+export const bootstrap =function(element,component){
    patch(element,function(){
 
    });

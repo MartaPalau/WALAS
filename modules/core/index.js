@@ -1,1 +1,1 @@
-export {bootStrap} from './src/bootstrap'
+export {bootstrap} from './src/bootstrap'

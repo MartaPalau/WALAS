@@ -1,0 +1,1 @@
+export {WebComponents} from './src/webcomponents'
