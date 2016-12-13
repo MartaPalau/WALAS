@@ -13,10 +13,13 @@ export default {
       jsnext: true,
       main: true,
       browser: true,
-    }),
-    commonjs()
+    }),  
+    commonjs(),    
+    replace({
+      'process.env.NODE_ENV': JSON.stringify("production")
+    })
+   
   ],
-  
   sourceMap: true,
   sourceMapFile:'dist/bundle.js.map'
 };

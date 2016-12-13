@@ -1,2 +1,2 @@
 export * from './core';
-export * from './webcomponents';
+export * from './components';

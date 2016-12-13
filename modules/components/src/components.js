@@ -1,4 +1,3 @@
-
 class Component{
   constructor(){
       this._customElements = {};
@@ -16,4 +15,4 @@ class Component{
     return this._customElements[name];
   }
 }
-export let WebComponents = new Component();
+export let Components = new Component();
