@@ -2,7 +2,7 @@ import {Dom} from './dom'
 export class ComponentBase extends HTMLElement{
     constructor(){
         super();
-        this._patch= this.attachShadow({mode: 'open'});
+        this._patch= this.attachShadow({mode: 'open'});       
     }
     get patch(){
         return this._patch;
@@ -19,8 +19,11 @@ export class ComponentBase extends HTMLElement{
     render(){
 
     }
-    created(){
+    refresh(){
         Dom.patch(this.patch,this.render.bind(this));
+    }
+    created(){
+        this.refresh();
     }
     destroy(){
 
