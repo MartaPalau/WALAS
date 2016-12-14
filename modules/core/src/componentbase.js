@@ -1,4 +1,4 @@
-import {Dom} from './dom';
+import {DOM} from './dom';
 
 export class ComponentBase extends HTMLElement {
     constructor(){
@@ -21,7 +21,8 @@ export class ComponentBase extends HTMLElement {
 
     }
     refresh(){
-        Dom.patch(this.patch,this.render.bind(this));
+        var render = this.render.call(this,null);
+        DOM.patch(this.patch,render);
     }
     created(){
         this.refresh();

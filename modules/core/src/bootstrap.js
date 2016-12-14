@@ -1,7 +1,7 @@
-import {Dom} from './dom';
+import {DOM} from './dom';
 export const bootstrap =function(element,component){
-   Dom.patch(element,function(){
+   DOM.patch(element,function(){
        var name = component.componentName();
-       Dom.void(name);       
+       DOM.void(name);       
    });
 };

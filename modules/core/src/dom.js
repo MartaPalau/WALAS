@@ -24,16 +24,16 @@ function createChilds(childs) {
             .forEach(child => child());
     }
 }
-function normalizeAttrs(attrs){
-  var _attrs =[];
-  if(!attrs || typeof attrs !== "object"){
-      return null;
-  }
-  Object.keys(attrs).forEach((attr)=>{
-      _attrs.push(attr),
-      _attrs.push(attrs[attr]);
-  });
-  return _attrs;
+function normalizeAttrs(attrs) {
+    var _attrs = [];
+    if (!attrs || typeof attrs !== "object") {
+        return null;
+    }
+    Object.keys(attrs).forEach((attr) => {
+        _attrs.push(attr),
+            _attrs.push(attrs[attr]);
+    });
+    return _attrs;
 }
 function create() {
     var args = [...arguments],
@@ -42,15 +42,18 @@ function create() {
         nextArgs = args.slice(2),
         text = getTextNode(nextArgs);
 
-    this.open(name, null, attrs);
-    if (text) {
-        this.text(text);
+    return function() {
+        DOM.open(name, null, attrs);
+        if (text) {
+            DOM.text(text);
+        }
+        createChilds(nextArgs);
+        DOM.close(name);
     }
-    createChilds(nextArgs);
-    this.close(name);
+
 
 }
-export const Dom = {
+export const DOM = {
     patch: patch,
     open: createEvents,
     close: elementClose,
