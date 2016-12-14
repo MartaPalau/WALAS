@@ -7,7 +7,7 @@ import eslint from 'rollup-plugin-eslint';
 
 export default {
   entry: 'index.js',  
-  dest: 'dist/bundle.js',
+  dest: 'dist/walas.js',
   format: 'umd',
   moduleName:'Walas',
   plugins: [
@@ -27,5 +27,5 @@ export default {
     //uglify()
   ],
   sourceMap: true,
-  sourceMapFile:'dist/bundle.js.map'
+  sourceMapFile:'dist/walas.js.map'
 };
