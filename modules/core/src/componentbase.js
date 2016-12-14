@@ -1,6 +1,6 @@
 import {Dom} from './dom';
 
-export class ComponentBase extends HTMLElement{
+export class ComponentBase extends HTMLElement {
     constructor(){
         super();
         this._patch= this.attachShadow({mode: 'closed'});       
@@ -29,7 +29,7 @@ export class ComponentBase extends HTMLElement{
     destroy(){
 
     }
-    changeAttribute(attr,oldValue,newValue){
+    changeAttribute(){
 
     }
 }

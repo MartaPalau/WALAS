@@ -1,7 +1,8 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
-import uglify from 'rollup-plugin-uglify';
+//import uglify from 'rollup-plugin-uglify';
+import eslint from 'rollup-plugin-eslint';
 
 export default {
   entry: 'index.js',  
@@ -17,8 +18,8 @@ export default {
     commonjs(),    
     replace({
       'process.env.NODE_ENV': JSON.stringify("production")
-    })
-   
+    }),
+    eslint()
   ],
   sourceMap: true,
   sourceMapFile:'dist/bundle.js.map'

@@ -1,1 +1,1 @@
-export {Components} from './src/components'
+export {Components} from './src/components';
