@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
-<body>    
+
+<body>
     <div id="app">Loading....</div>
-    
+
     <x-app></x-app>
-    
+
     <script src="../dist/bundle.js"></script>
     <script>
         class App extends Walas.ComponentBase{
@@ -37,15 +39,22 @@
                 return this._text
             }
             render(){
-                /*               
-                <div onClick="{this.click}">
-                    {this.text}
-                </div>
-                */
+               /*<div onClick={this.click} a="10">
+                    {this.text} Hola pepe
+                    <a $key="uno"></a>
+                </div>*/
 
-                Walas.Dom.open('div',null,null,"onClick",this.click.bind(this));
+                Walas.Dom.create(
+                    "div",
+                    { onClick: this.click.bind(this), a: "10" },
+                    this.text,
+                    " Hola pepe",
+                    Walas.Dom.create.bind(Walas.Dom,"a",null)
+                );
+
+                /*Walas.Dom.open('div',null,null,"onClick",this.click.bind(this));
                     Walas.Dom.text(this.text);
-                Walas.Dom.close('div');
+                Walas.Dom.close('div');*/
             }
             
         }
@@ -54,4 +63,5 @@
        
     </script>
 </body>
+
 </html>
